@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>NT laboratories | Assignment 4</title>
+</head>
+
+<body>
+    <div id="header">
+        <a href="index.html">
+            <h1>Network Technologies Laboratory Reports</h1>
+        </a>
+        <h2>group 12: Wojciech Michałowski 242222, Piotr Wosiak 242232</h2>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="assignment1.html">Assignment 1</a></li>
+            <li><a href="assignment2.html">Assignment 2</a></li>
+            <li> <a href="assignment3.html">Assignment 3 </a></li>
+            <li> <a href="assignment4.html">Assignment 4</a></li>
+            <li> <a href="assignment5.html">Assignment 5</a></li>
+        </ul>
+    </div>
+    <h2>Assignment 4</h2>
+    <div class="content">
+        <h3>Theoretical Part</h3>
+
+        <p>Describe the following:
+        <ul>
+            <li><dfn>TCP protocol</dfn> - TCP stands for Transmission Control Protocol and is one of the main
+                protocols of the
+                Internet protocol suite. TCP provides reliable, ordered, and error-checked delivery of a stream of
+                octets (bytes) between applications running on hosts communicating via an IP network.</li>
+            <li><dfn>UDP protocol</dfn> - UDP stands for User Datagram Protocol and is another data transport
+                protocol. It
+                provides a mechanism to detect corrupt data in packets, but it does not attempt to solve other
+                problems that arise with packets, such as lost or out of order packets. Thus, the information
+                received is unreliable when it comes to ordering, duplicates and packets arriving at all. The
+                advantage of UDP over TCP is speed of transmission.</li>
+            <li> <dfn>TCP protocol parameters</dfn> - TCP wraps each data packet with a header containing 10
+                mandatory fields
+                totalling 20 bytes (or octets). Each header holds information about the connection and the current
+                data being sent
+                <img src="https://www.lifewire.com/thmb/irn835md4Hf2FmoEbh1rdAVNjTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tcp-headers-f2c0881ea4c94e919794b7c0677ab90a.jpg"
+                    alt="">
+            </li>
+            <li> <dfn>UDP protocol parameters</dfn> - UDP Packet contains of data and header. Header consists of
+                information
+                about: source port, destination port, length and checksum: <img
+                    src="https://media.geeksforgeeks.org/wp-content/uploads/UDP-header.png" alt=""></li>
+            <li> <dfn>TCP Connection</dfn> - TCP connection consists of three stages:
+                <ol>
+                    <li>Establishing the connection (Packets with ACK and SYN bits set to 1 are exchanged between
+                        devices)</li>
+                    <li>Sending packets of data (the recipient must always acknowledge what they received)</li>
+                    <li>Closing the connection (exchange of packets with ACK and FIN bits set to 1)</li>
+                </ol>
+            </li>
+            <li> <dfn>three-way handshake</dfn> - A way to establish connection between two computers over TCP. It
+                starts with
+                the one wanting to establish the connection sending the packet with “SYN” (synchronize?) bit set to
+                1. This informs the other computer about the intention of starting the transmission. In response, it
+                receives a packet with “ACK” (acknowledge) and “SYN” bits set to 1. Last step of the handshake is
+                for the first computer to reply back with an “ACK”. <img
+                    src="https://cdn.kastatic.org/ka-perseus-images/d09f9d37ff2a2deb21a8822f8c99ba6b86319f0b.svg"
+                    alt=""></li>
+            <li> <dfn>connection establishment</dfn> - In TCP done by three-way handshake mechanism, in UDP there is
+                no such
+                thing.</li>
+            <li> <dfn>connection release</dfn>
+                <ul>
+                    <li>TCP supports two types of connection release:
+                        <ul>
+                            <li>Graceful connection release - the connection is open until both parties have closed
+                                their sides of the connection</li>
+                            <li>Abrupt connection release - either one TCP entity is forced to close the
+                                connection or one user closes both directions of data transfer</li>
+                        </ul>
+                    </li>
+                    <li>UDP once again, does not implement connection release in any controlled form.</li>
+                </ul>
+            </li>
+            <li> <dfn>ports</dfn> - A port is a transport layer concept - virtual point where network connections
+                start and end.
+                Ports are software-based and managed by a computer's operating system. Each port is associated with
+                a specific process or service. Ports are standardized across all network-connected devices, with
+                each port assigned a number. The use of ports helps computers understand what to do with the data
+                they receive. Common network ports include:
+                <table>
+                    <tr>
+                        <th>Port Number</th>
+                        <th>Usage</th>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>FTP Data Transfer</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>FTP Command Control</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>SSH</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Telnet</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>SMTP</td>
+                    </tr>
+                    <tr>
+                        <td>53</td>
+                        <td>DNS</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td>HTTP</td>
+                    </tr>
+                    <tr>
+                        <td>110</td>
+                        <td>POP3</td>
+                    </tr>
+                    <tr>
+                        <td>119</td>
+                        <td>NNTP</td>
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>NTP</td>
+                    </tr>
+                    <tr>
+                        <td>143</td>
+                        <td>IMAP</td>
+                    </tr>
+                    <tr>
+                        <td>161</td>
+                        <td>SNMP</td>
+                    </tr>
+                    <tr>
+                        <td>194</td>
+                        <td>IRC</td>
+                    </tr>
+                    <tr>
+                        <td>443</td>
+                        <td>HTTPS</td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        </p>
+        <div class="subsection">
+            <p>Sources:</p>
+            <ul>
+                <li><a
+                        href="https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:transporting-packets/a/transmission-control-protocol--tcp">https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:transporting-packets/a/transmission-control-protocol--tcp</a>
+                </li>
+                <li><a
+                        href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">https://en.wikipedia.org/wiki/Transmission_Control_Protocol</a>
+                </li>
+                <li><a
+                        href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">https://en.wikipedia.org/wiki/User_Datagram_Protocol</a>
+                </li>
+                <li><a
+                        href="https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:transporting-packets/a/user-datagram-protocol-udp">https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:transporting-packets/a/user-datagram-protocol-udp</a>
+                </li>
+                <li><a
+                        href="https://www.cloudflare.com/learning/network-layer/what-is-a-computer-port/">https://www.cloudflare.com/learning/network-layer/what-is-a-computer-port/</a>
+                </li>
+                <li><a
+                        href="https://www.geeksforgeeks.org/tcp-connection-termination/">https://www.geeksforgeeks.org/tcp-connection-termination/</a>
+                </li>
+                <li><a
+                        href="https://www.imperva.com/learn/ddos/tcp-transmission-control-protocol/">https://www.imperva.com/learn/ddos/tcp-transmission-control-protocol/</a>
+                </li>
+                <li><a
+                        href="https://www.lifewire.com/thmb/irn835md4Hf2FmoEbh1rdAVNjTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tcp-headers-f2c0881ea4c94e919794b7c0677ab90a.jpg">https://www.lifewire.com/thmb/irn835md4Hf2FmoEbh1rdAVNjTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tcp-headers-f2c0881ea4c94e919794b7c0677ab90a.jpg</a>
+                </li>
+                <li><a
+                        href="https://www.geeksforgeeks.org/user-datagram-protocol-udp/">https://www.geeksforgeeks.org/user-datagram-protocol-udp/</a>
+                </li>
+                <li>Lecture materials</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <h3>Practical Part</h3>
+
+    </div>
+</body>
+
+</html>

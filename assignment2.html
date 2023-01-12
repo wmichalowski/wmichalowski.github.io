@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>NT laboratories | Assignment 2</title>
+</head>
+
+<body>
+    <div id="header">
+        <a href="index.html">
+            <h1>Network Technologies Laboratory Reports</h1>
+        </a>
+        <h2>group 12: Wojciech Michałowski 242222, Piotr Wosiak 242232</h2>
+    </div>
+    <div id="menu">
+        <ul>
+
+            <li><a href="assignment1.html">Assignment 1</a></li>
+            <li><a href="assignment2.html">Assignment 2</a></li>
+            <li> <a href="assignment3.html">Assignment 3 </a></li>
+            <li> <a href="assignment4.html">Assignment 4</a></li>
+            <li> <a href="assignment5.html">Assignment 5</a></li>
+        </ul>
+    </div>
+    <h2>Assignment 2</h2>
+    <div class="content">
+        <h3>Theoretical Part</h3>
+        <ol>
+            <li><strong>Ethernet standards for physical layer, ethernet limits, Ethernet frame</strong></li>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>IEEE Standard</th>
+                    <th>Data Rate</th>
+                    <th>Media Type</th>
+                    <th>Maximum Distance</th>
+                </tr>
+                <tr>
+                    <td>Ethernet</td>
+                    <td>802.3</td>
+                    <td>10 Mbps</td>
+                    <td>10Base-T</td>
+                    <td>100 meters</td>
+                </tr>
+                <tr>
+                    <td>Fast Ethernet/100Base-T</td>
+                    <td>802.3u</td>
+                    <td>100 Mbps</td>
+                    <td>100Base-TX <br /> 100Base-FX</td>
+                    <td>100 meters <br> 2000 meters</td>
+                </tr>
+                <tr>
+                    <td>Gigabit Ethernet</td>
+                    <td>802.3z</td>
+                    <td>1000 Mbps</td>
+                    <td>1000Base-T <br> 1000Base-SX <br> 1000Base-LX</td>
+                    <td>100 meters <br> 275/550 meters <br> 550/5000 meters</td>
+                </tr>
+                <tr>
+                    <td>10 Gigabit Ethernet</td>
+                    <td>802.3ae</td>
+                    <td>10 Gbps</td>
+                    <td>10GBase-SR <br> 10GBase-LX4 <br>10GBase-LR/ER <br>10GBase-SW/LW/EW</td>
+                    <td>300 meters <br>300m MMF/10km SMF <br>10km/40km <br>300m/10km/40km</td>
+                </tr>
+            </table>
+            <img class="theoryImg"
+                src="https://static.javatpoint.com/tutorial/computer-network/images/ethernet-frame-format.png"
+                alt="Ethernet Frame">
+            <li><strong>MAC address, broadcasting</strong></li>
+            <p>A media access control address (MAC address) is a unique identifier assigned to a network interface
+                controller (NIC) for use as a network address in communications within a network segment. This use is
+                common in most IEEE 802 networking technologies, including Ethernet, Wi-Fi, and Bluetooth. Within the
+                OSI network model, MAC addresses are used in the medium access control (MAC) protocol sublayer of the
+                data
+                link layer. As typically represented, MAC addresses are recognizable as six groups of two hexadecimal
+                digits, separated by hyphens, colons, or without a separator</p>
+            <p><strong> Broadcasting:</strong>
+
+                Broadcast MAC destination addresses are used by the source to forward a packet to all hosts on the
+                network. A broadcast packet contains a destination IP address that has all ones (1s) in the host
+                portion. This
+                numbering in the address means that all hosts on that local network (broadcast domain) will receive and
+                process the packet. Broadcast IP address for a network needs a corresponding broadcast MAC address in
+                the Ethernet frame. On Ethernet networks, the broadcast MAC address is 48 ones displayed as hexadecimal
+                FF-FF-FF-FF-FF-FF.
+            </p>
+            <li><strong>The difference between hub, switch and router</strong>
+                <p> They work on different ISO OSI layers:
+                <ul>
+                    <li> Hub – works on layer 1, a passive device, forwards all signals to all ports.</li>
+                    <li>Switch – works on layer 2 (usually), joins devices into one network, passes frames exactly to
+                        the
+                        devices
+                        identified by their MAC addresses.</li>
+                    <li>Router – works on layer 3, routes packets across different networks (chooses the most
+                        efficient way
+                        for them).
+                    </li>
+                </ul>
+
+
+                </p>
+
+            </li>
+            <li><strong>CSMA/CD, collision, half and full duplex</strong></li>
+            <p>Carrier-sense multiple access with collision detection (CSMA/CD) is a medium access control (MAC) method
+                used for local area networking. It uses carrier-sensing to
+                defer transmissions until no other stations are transmitting. This is used in combination with collision
+                detection in which a transmitting station detects collisions by sensing transmissions from other
+                stations while it is transmitting a frame. When this collision condition is detected, the station stops
+                transmitting that frame, transmits a jam signal, and then waits for a random time interval before trying
+                to resend the frame.</p>
+
+            <p>A duplex communication system is a point-to-point system composed of two or more connected parties or
+                devices that can communicate with one another in both directions.</p>
+            <p>In a half-duplex or semiduplex system, both parties can communicate with each other, but not
+                simultaneously; the communication is one direction at a time. In a full-duplex system, both parties can
+                communicate with each other simultaneously.</p>
+            <li><strong>ARP request, detecting doubled IP address</strong></li>
+            <p>Address resolution protocol – is a communication protocol used for discovering the link layer address,
+                such as a MAC address, associated with a given internet layer address, typically an IPv4 address.</p>
+            <p>Before sending the data, a computer creates a broadcast ARP frame, which is sent to all the devices in
+                the same network. Source address field of the frame includes information about the address of the source
+                computer, target address field includes the broadcast MAC address (ff:ff:ff:ff:ff:ff). Each of the
+                devices that receive the frame decapsulates it into the form of a packet and checks if target field
+                includes its IP address. If the address is different, packet is ignored. If the address is correct, it
+                will create a new frame, that will include its MAC address. In an event of doubled IP address in the
+                network, for one ARP request, there are two responses.</p>
+            <li><strong>BOOTP, DHCP</strong></li>
+            <p> <strong>The Bootstrap Protocol (BOOTP)</strong> is a computer networking protocol used in Internet
+                Protocol networks to
+                automatically assign an IP address to network devices from a configuration server. When a
+                network-connected computer boots up, its IP stack broadcasts BOOTP network messages requesting an
+                IP-address assignment. A BOOTP configuration-server replies to the request by assigning an IP address
+                from a pool of addresses, which is preconfigured by an administrator.</p>
+            <p> <strong>DHCP</strong> is a newer technology based on BOOTP, but can dynamically allocate IP addresses
+                from a pool and
+                reclaim them when they
+                are no longer in use. It can also be used to deliver a wide range of extra configuration parameters to
+                IP clients, including platform-specific parameters.</p>
+            <li><strong>VLANs</strong></li>
+            <p>LANS separated logically by software on data link layer. VLANs are implemented through the software of
+                switch. VLANs work by applying tags to network frames and handling these tags in networking systems –
+                creating the appearance and functionality of network traffic that is physically on a single network but
+                acts as if it is split between separate networks. In this way, VLANs can keep network applications
+                separate despite being connected to the same physical network, and without requiring multiple sets of
+                cabling and networking devices to be deployed.</p>
+        </ol>
+        <div class="subsection">
+            <p>Sources:</p>
+            <ul>
+                <li><a
+                        href="https://www.lantronix.com/resources/networking-tutorials/ethernet-tutorial-networking-basics/">https://www.lantronix.com/resources/networking-tutorials/ethernet-tutorial-networking-basics/</a>
+                </li>
+                <li><a
+                        href="https://static.javatpoint.com/tutorial/computer-network/images/ethernet-frame-format.png">https://static.javatpoint.com/tutorial/computer-network/images/ethernet-frame-format.png</a>
+                </li>
+                <li><a
+                        href="http://cisco.num.edu.mn/CCNA_R&S1/course/module5/5.1.3.4/5.1.3.4.html">http://cisco.num.edu.mn/CCNA_R&S1/course/module5/5.1.3.4/5.1.3.4.html</a>
+                </li>
+                <li><a
+                        href="https://en.wikipedia.org/wiki/Duplex_(telecommunications)">https://en.wikipedia.org/wiki/Duplex_(telecommunications)</a>
+                </li>
+                <a
+                    href="https://pasja-informatyki.pl/sieci-komputerowe/protokol-arp/">https://pasja-informatyki.pl/sieci-komputerowe/protokol-arp/</a>
+                <li><a
+                        href="https://en.wikipedia.org/wiki/Duplex_(telecommunications)">https://en.wikipedia.org/wiki/Duplex_(telecommunications)</a>
+                </li>
+                <li><a
+                        href="https://en.wikipedia.org/wiki/Bootstrap_Protocol">https://en.wikipedia.org/wiki/Bootstrap_Protocol</a>
+                </li>
+                <li><a href="https://en.wikipedia.org/wiki/VLAN">https://en.wikipedia.org/wiki/VLAN</a></li>
+                <li>Lecture materials</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <h3>Practical Part</h3>
+        <ol>
+            <li><strong>Find your MAC address using ipconfig, MAC address of your default gateway using
+                    Wireshark</strong>
+            </li>
+            <img src="images/task_2/physical_address.png" alt="MAC address of the computer">
+            <img src="images/task_2/gateway_mac.png" alt="MAC address of the gateway">
+
+            <li><strong>Find the producer of your network adapter</strong></li>
+            <p>The producer of teh Network Interface Card can be discriminated by looking up the first three bytes of
+                the
+                MAC Address on one of the many sites.</p>
+            <p>Wireshark is also able to look up the NIC Vendors and help with the analysis.</p>
+            <img src="images/task_2/mac_vendor.png" alt="MAC Vendor">
+
+            <li><strong>Flush ARP cache</strong></li>
+            <p>ARP cache may be flushed using the command: <i>arp -d</i></p>
+            <img src="images/task_2/arp_flush.png" alt="ARP flush">
+
+            <li><strong>Set the same IP address on two different hosts in the lab and detect it using arp
+                    request</strong>
+            </li>
+            <p>Firstly, static IPs were set for two virtual machines.</p>
+            <p>To send an ARP request, <i>arping</i> may be utilised.</p>
+            <img src="images/task_2/arping_same_ip.png" alt="arping results">
+
+            <li><strong>Using Wireshark save the packets required to obtain IP address through DHCP</strong></li>
+            <p>When a new client connects to a network, DHCP is responsible for providing an IP address for the host.
+            </p>
+            <p>Wireshark was used to capture the packets required to obtain an IP address through DHCP.</p>
+            <img src="images/task_2/dhcp.png" alt="DHCP packets">
+
+            <li><strong>Release and renew IP address using ipconfig</strong></li>
+            <p>On a Linux client, one may release the DHCP lease by using: sudo dhclient -r</p>
+            <p>Once that is done, we may proceed to renew the DHCP lease using the command: sudo dhclient</p>
+            <p>On a Windows host, the same thing may be achieved with the help of ipconfig /release and ipconfig /renew
+            </p>
+            <img src="images/task_2/release.png" alt="ipconfig release and renew">
+
+            <li><strong>Change MAC address of a computer in the lab to the same as the MAC address of the other computer
+                    in
+                    the lab and verify IP address obtained.</strong></li>
+            <p>Due to the scrict policy of the virtual machines in the virtual network, this exercise had to be done in
+                the
+                real network.</p>
+            <p>Firstly, the MAC address of one computer was changed to the MAC address of the other computer.</p>
+            <img src="images/task_2/ip_desktop.png" alt="MAC of the desktop">
+            <img src="images/task_2/changed_mac.png" alt="MAC of the laptop">
+            <p>As soon as we set the same MAC address for both devices, the second computer that had the MAC changes
+                momentarily picked up the IP address of the first computer.</p>
+
+        </ol>
+    </div>
+</body>
+
+</html>
