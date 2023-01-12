@@ -4,282 +4,345 @@
 <head>
     <meta charset="UTF-8">
     <title>NT laboratories | Assignment 1</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        img {
+            max-width: 800px;
+            border: 3px solid black;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="header">
-        <a href="index.html">
-            <h1>Network Technologies Laboratory Reports</h1>
+    <a href="index.html">
+        <h1>Network Technologies Laboratory Reports</h1>
+    </a>
+    <h2>group 12: Wojciech Michałowski 242222, Piotr Wosiak 242232</h2>
+    <hr>
+    <ul>
+        <a href="assignment1.html">
+            <li>Assignment 1</li>
         </a>
-        <h2>group 12: Wojciech Michałowski 242222, Piotr Wosiak 242232</h2>
-    </div>
-    <div id="menu">
-        <ul>
-
-            <li><a href="assignment1.html">Assignment 1</a></li>
-
-            <li><a href="assignment2.html">Assignment 2</a></li>
-
-            <li> <a href="assignment3.html">Assignment 3 </a></li>
-
-
-            <li> <a href="assignment4.html">Assignment 4</a></li>
-
-
-            <li> <a href="assignment5.html">Assignment 5</a></li>
-
-        </ul>
-    </div>
+        <a href="assignment2.html">
+            <li>Assignment 2</li>
+        </a>
+        <a href="assignment3.html">
+            <li>Assignment 3</li>
+        </a>
+        <a href="assignment4.html">
+            <li>Assignment 4</li>
+        </a>
+        <a href="assignment5.html">
+            <li>Assignment 5</li>
+        </a>
+    </ul>
     <h2>Assignment 1</h2>
-    <div class="content">
+    <h3>Theoretical Part</h3>
+    <ol>
+        <li><strong>Describe ISO/OSI model and protocol assignment</strong></li>
+        <p>ISO/OSI model describes how applications communicate over the network. <br>
+            There are seven layers of ISO/OSI model: <br>
+        <table border="1">
+            <tr>
+                <th>Layer</th>
+                <th>Examples of protocols</th>
+            </tr>
+            <tr>
+                <td>Application</td>
+                <td>
+                    <ul>
+                        <li>DNS</li>
+                        <li>HTTP</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Presentation</td>
+                <td>
+                    <ul>
+                        <li>SSL</li>
+                        <li>TLS</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Session</td>
+                <td>
+                    <ul>
+                        <li>NetBIOS</li>
+                        <li>PAP</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Transport</td>
+                <td>
+                    <ul>
+                        <li>TCP</li>
+                        <li>UDP</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Network</td>
+                <td>
+                    <ul>
+                        <li>IPv4</li>
+                        <li>IPv6</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Link</td>
+                <td>
+                    <ul>
+                        <li>ARP</li>
+                        <li>CSMA</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Physical</td>
+                <td>
+                    <ul>
+                        <li>IEEE 802.11</li>
+                        <li>USB</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        </p>
+        <li><strong>List Protocol Data Units for corresponding layers</strong></li>
+        <p>
+        <table border="1">
+            <tr>
+                <th>Layer</th>
+                <th>Unit</th>
+            </tr>
+            <tr>
+                <td>Application </td>
+                <td>Message</td>
+            </tr>
+            <tr>
+                <td>Presentation</td>
+                <td>Message</td>
+            </tr>
+            <tr>
+                <td>Session</td>
+                <td>Message</td>
+            </tr>
+            <tr>
+                <td>Transport</td>
+                <td>Segment</td>
+            </tr>
+            <tr>
+                <td>Network</td>
+                <td>Datagram</td>
+            </tr>
+            <tr>
+                <td>Link</td>
+                <td>Frame</td>
+            </tr>
+            <tr>
+                <td>Physical</td>
+                <td>Bits</td>
+            </tr>
+        </table>
+        </p>
+        <li><strong>Assign the following protocols to corresponding layers: ARP, Bluetooth, DHCP, DNS, FTP, HTTP, ICMP,
+                IEEE 1394, IEEE 802.11, IGMP, IPv4, IPv6, L2TP, MIME, NetBIOS, NNTP, RS-232, RS-449, RTP, SIP, SLIP,
+                SSL, TCP, Telnet, TLS, UDP, USB</strong></li>
+        <p>
+        <table border="1">
+            <tr>
+                <th>Layer</th>
+                <th>Protocols</th>
+            </tr>
+            <tr>
+                <td>Application</td>
+                <td>
+                    <ul>
+                        <li>DHCP</li>
+                        <li>DNS</li>
+                        <li>FTP</li>
+                        <li>HTTP</li>
+                        <li>SIP</li>
+                        <li>Telnet</li>
+                        <li>NNTP</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Presentation</td>
+                <td>
+                    <ul>
+                        <li>SSL</li>
+                        <li>TLS</li>
+                        <li>MIME</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Session</td>
+                <td>
+                    <ul>
+                        <li>NetBIOS</li>
+                        <li>RTP</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Transport</td>
+                <td>
+                    <ul>
+                        <li>TCP</li>
+                        <li>UDP</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Network</td>
+                <td>
+                    <ul>
+                        <li>IPv4</li>
+                        <li>IPv6</li>
+                        <li>ICMP</li>
+                        <li>IGMP</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Link</td>
+                <td>
+                    <ul>
+                        <li>ARP</li>
+                        <li>L2TP</li>
+                        <li>SLIP</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Physical</td>
+                <td>
+                    <ul>
+                        <li>Bluetooth</li>
+                        <li>IEEE 802.11</li>
+                        <li>USB</li>
+                        <li>IEEE 1394</li>
+                        <li>RS-232</li>
+                        <li>RS-449</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        </p>
+    </ol>
+    <p>
+        Sources:
+    <ul>
+        <li>https://en.wikipedia.org/wiki/OSI_model</li>
+        <li>https://ftims.edu.p.lodz.pl/pluginfile.php/34372/mod_resource/content/3/Lecture02_new.pdf</li>
+        <li>http://kawia.wex.pl/protokolyosi.html</li>
+    </ul>
+    </p>
+    <h3>Practical Part</h3>
+    <ol>
+        <li><strong>Use PuTTY client to connect to the web server: studife.it.p.lodz.pl using the appropriate
+                protocol</strong></li>
+        <p>Using PuTTY, we connect to the studife.it.p.lodz.pl server using SSH protocol on port 22222. As per SSH
+            specification, we may specify the login within the URL.</p>
+        <img src="images/task_1/putty/putty_opened.png" alt="PuTTY window opened">
+        <p>Once we click "Open" button, we are greeted with the SSH login banner and after we input the password, we may
+            log in</p>
+        <img src="images/task_1/putty/putty_login.png" alt="PuTTY login">
 
-        <h3>Theoretical Part</h3>
-        <ol>
-            <li><strong>Describe ISO/OSI model and protocol assignment</strong></li>
-            <p>ISO/OSI model describes how applications communicate over the network. <br>
-                There are seven layers of ISO/OSI model: <br>
-            <ul>
-                <li>Application</li>
-                <li>Presentation</li>
-                <li>Session</li>
-                <li>Transport</li>
-                <li>Network</li>
-                <li>Link</li>
-                <li>Physical</li>
-            </ul>
-            </p>
-            <li><strong>List Protocol Data Units for corresponding layers</strong></li>
-            <p>
-            <table border="1">
-                <tr>
-                    <th>Layer</th>
-                    <th>Unit</th>
-                </tr>
-                <tr>
-                    <td>Application </td>
-                    <td>Message</td>
-                </tr>
-                <tr>
-                    <td>Transport</td>
-                    <td>Segment</td>
-                </tr>
-                <tr>
-                    <td>Network</td>
-                    <td>Datagram</td>
-                </tr>
-                <tr>
-                    <td>Link</td>
-                    <td>Frame</td>
-                </tr>
-            </table>
-            </p>
-            <li><strong>Assign the following protocols to corresponding layers: ARP, Bluetooth, DHCP, DNS, FTP, HTTP,
-                    ICMP,
-                    IEEE 1394, IEEE 802.11, IGMP, IPv4, IPv6, L2TP, MIME, NetBIOS, NNTP, RS-232, RS-449, RTP, SIP, SLIP,
-                    SSL, TCP, Telnet, TLS, UDP, USB</strong></li>
-            <p>
-            <table border="1">
-                <tr>
-                    <th>Layer</th>
-                    <th>Protocols</th>
-                </tr>
-                <tr>
-                    <td>Application</td>
-                    <td>
-                        <ul>
-                            <li>DHCP</li>
-                            <li>DNS</li>
-                            <li>FTP</li>
-                            <li>HTTP</li>
-                            <li>RTP</li>
-                            <li>SIP</li>
-                            <li>Telnet</li>
-                            <li>NNTP</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Presentation</td>
-                    <td>
-                        <ul>
-                            <li>SSL</li>
-                            <li>TLS</li>
-                            <li>MIME</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Session</td>
-                    <td>
-                        <ul>
-                            <li>NetBIOS</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Transport</td>
-                    <td>
-                        <ul>
-                            <li>TCP</li>
-                            <li>UDP</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Network</td>
-                    <td>
-                        <ul>
-                            <li>IPv4</li>
-                            <li>IPv6</li>
-                            <li>ICMP</li>
-                            <li>IGMP</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Link</td>
-                    <td>
-                        <ul>
-                            <li>ARP</li>
-                            <li>L2TP</li>
-                            <li>SLIP</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Physical</td>
-                    <td>
-                        <ul>
-                            <li>Bluetooth</li>
-                            <li>IEEE 802.11</li>
-                            <li>USB</li>
-                            <li>IEEE 1394</li>
-                            <li>RS-232</li>
-                            <li>RS-449</li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-            </p>
-        </ol>
-    </div>
-    <div class="content">
-        <h3>Practical Part</h3>
-        <ol>
-            <li><strong>Use PuTTY client to connect to the web server: studife.it.p.lodz.pl using the appropriate
-                    protocol</strong></li>
-            <p>Using PuTTY, we connect to the studife.it.p.lodz.pl server using SSH protocol on port 22222. As per SSH
-                specification, we may specify the login within the URL.</p>
-            <img src="images/task_1/putty/putty_opened.png" alt="PuTTY window opened">
-            <p>Once we click "Open" button, we are greeted with the SSH login banner and after we input the password, we
-                may
-                log in</p>
-            <img src="images/task_1/putty/putty_login.png" alt="PuTTY login">
+        <li><strong>Download the webpage using GET html command.</strong></li>
+        <p>Threre are multiple ways this may be achieved. One way is to use telnet command. Telnet is a protocol that
+            was once used to remotely control the server. It's ability to send ASCII commands can be used to send a GET
+            request and using "tee" command, pipe the output both to the terminal and to a file. Throughout the
+            exercise, we utilised the "localhost" as we were unable to make a request to "studife.it.p.lodz.pl" when
+            making a request directly from the server.</p>
+        <img src="images/task_1/putty/telnet_get.png" alt="Telnet GET Request">
+        <p>However, as it may be noticed, such way of operation is far from being ideal. Not only is telnet outdated,
+            but also we would have to manually clean the file from the unwanted telnet commands.</p>
+        <p>A superior solution is to use "curl" or "wget" commands. Curl is a command line tools used to manually send
+            HTTP requests. Wget is a tool used specifically to download web pages and other assets. In this example, we
+            used curl command to download the sample page.</p>
+        <img src="images/task_1/putty/downloaded_page.png" alt="Page downloaded using curl">
 
-            <li><strong>Download the webpage using GET html command.</strong></li>
-            <p>Threre are multiple ways this may be achieved. One way is to use telnet command. Telnet is a protocol
-                that
-                was once used to remotely control the server. It's ability to send ASCII commands can be used to send a
-                GET
-                request and using "tee" command, pipe the output both to the terminal and to a file. Throughout the
-                exercise, we utilised the "localhost" as the DNS server could not provide us with a valid record for
-                "studife.it.p.lodz.pl".</p>
-            <img src="images/task_1/putty/telnet_get.png" alt="Telnet GET Request">
-            <p>However, as it may be noticed, such way of operation is far from being ideal. Not only is telnet
-                outdated,
-                but also we would have to manually clean the file from the unwanted telnet commands.</p>
-            <p>A superior solution is to use "curl" or "wget" commands. Curl is a command line tools used to manually
-                send
-                HTTP requests. Wget is a tool used specifically to download web pages and other assets. In this example,
-                we
-                used curl command to download the sample page.</p>
-            <img src="images/task_1/putty/downloaded_page.png" alt="Page downloaded using curl">
+        <li><strong>Copy the result to the local file.</strong></li>
+        <p>A simple solution is to use SCP command to copy the file securely to the local folder. The proof is provided
+            as a part of the next exercise.</p>
 
-            <li><strong>Copy the result to the local file.</strong></li>
-            <p>A simple solution is to use SCP command to copy the file securely to the local folder. The proof is
-                provided
-                as a part of the next exercise.</p>
+        <li><strong>Display the file in the browser from local disk.</strong></li>
+        <img src="images/task_1/putty/file_downloaded_locally.png" alt="File displayed locally">
 
-            <li><strong>Display the file in the browser from local disk.</strong></li>
-            <img src="images/task_1/putty/file_downloaded_locally.png" alt="File displayed locally">
+        <li><strong>Use ping to check connection to web server Use Wireshark to find to list all protocols which are
+                used during this communication. Assign abovementioned protocols to ISO/OSI layers.</strong></li>
+        <p>As the "studife.it.p.lodz.pl" server is configured in a secure manner, it does not respond to ping requests.
+            Having consulted with the tutor, we sent ping requests to a different server.</p>
+        <img src="images/task_1/ping_output.png" alt="Ping output">
+        <p>We may notice that each ping consists of several layers, as all packets do.</p>
+        <ul>
+            <li>Data link layer - Ethernet II, which includes source and destination MAC addresses</li>
+            <li>Internet layer - Internet Protocol v4</li>
+        </ul>
+        <p>ICMP is a protocol that supports Internet Protocol, thus it works on the Internet layer</p>
+        <p>We could also consider that in the very beginning a DNS query (Appliation layer) is sent to determine the IP
+            address of the chosen server (google.com in our case).</p>
+        <p>Next, ARP request (Data-link layer) is sent to determine the MAC address of the next device.</p>
 
-            <li><strong>Use ping to check connection to web server Use Wireshark to find to list all protocols which are
-                    used during this communication. Assign abovementioned protocols to ISO/OSI layers.</strong></li>
-            <p>As the "studife.it.p.lodz.pl" server is configured in a secure manner, it does not respond to ping
-                requests.
-                Having consulted with the tutor, we sent ping requests to a different server.</p>
-            <img src="images/task_1/ping_output.png" alt="Ping output">
-            <p>We may notice that each ping consists of several layers, as all packets do.</p>
-            <ul>
-                <li>Data link layer - Ethernet II, which includes source and destination MAC addresses</li>
-                <li>Internet layer - Internet Protocol v4</li>
-            </ul>
-            <p>ICMP is a protocol that supports Internet Protocol, thus it works on the Internet layer</p>
-            <p>We could also consider that in the very beginning a DNS query (Appliation layer) is sent to determine the
-                IP
-                address of the chosen server (google.com in our case).</p>
-            <p>Next, ARP request (Data-link layer) is sent to determine the MAC address of the next device.</p>
+        <li><strong>Use ftp protocol to upload your webpage to the server. Use Wireshark to find your password and to
+                list all protocols which are used during this communication. Assign abovementioned protocols to ISO/OSI
+                layers.</strong></li>
+        <img src="images/task_1/ftp_password.png" alt="FTP password">
+        <p>We may notice that each packet within FTP connection consists of several layers, as all packets do.</p>
+        <ul>
+            <li>Data link layer - Ethernet II, which includes source and destination MAC addresses</li>
+            <li>Internet layer - Internet Protocol v4</li>
+            <li>Transport layer - Transmission Control Protocol (TCP)</li>
+            <li>Application layer - File Transfer Protocol (FTP)</li>
+        </ul>
+        <p>Since FTP does not encrypt the data that is sent, we may easily find the password within the packets, as
+            shown on the image above.</p>
 
-            <li><strong>Use ftp protocol to upload your webpage to the server. Use Wireshark to find your password and
-                    to
-                    list all protocols which are used during this communication. Assign abovementioned protocols to
-                    ISO/OSI
-                    layers.</strong></li>
-            <img src="images/task_1/ftp_password.png" alt="FTP password">
-            <p>We may notice that each ping consists of several layers, as all packets do.</p>
-            <ul>
-                <li>Data link layer - Ethernet II, which includes source and destination MAC addresses</li>
-                <li>Internet layer - Internet Protocol v4</li>
-                <li>Transport layer - Transmission Control Protocol (TCP)</li>
-                <li>Application layer - File Transfer Protocol (FTP)</li>
-            </ul>
-            <p>Since FTP does not encrypt the data that is sent, we may easily find the password within the packets, as
-                shown on the image above.</p>
-
-            <li><strong>Use scp, sftp and scp protocols to upload your webpage to the server. Use Wireshark to find your
-                    password and to list all protocols which are used during this communication. Assign abovementioned
-                    protocols to ISO/OSI layers.</strong></li>
-            <p>Both SCP and SFTP protocols utilise SSH to encrypt the data that is exchanged between the client and the
-                server. As a result, we are unable to extract password from the communication. Interestingly, Wireshark
-                tries to interpret the communication and, e.g. while connecting to port 22, it interprets the
-                communication
-                as SSH protocol</p>
-            <p>SCP Protocol</p>
-            <ul>
-                <li>
-                    <p>Port 22</p>
-                    <img src="images/task_1/wireshark_scp_22.png" alt="SCP Port 22">
-                </li>
-                <li>
-                    <p>Port 22222</p>
-                    <img src="images/task_1/wireshark_scp_22222.png" alt="SCP Port 22222">
-                </li>
-            </ul>
-            <p>SFTP Protocol</p>
-            <ul>
-                <li>
-                    <p>Port 22</p>
-                    <img src="images/task_1/wireshark_sftp_22.png" alt="SFTP Port 22">
-                </li>
-                <li>
-                    <p>Port 22222</p>
-                    <img src="images/task_1/wireshark_sftp_22222.png" alt="SFTP Port 22222">
-                </li>
-            </ul>
-            <p>Both protocols make use of the same underlying layers. SFTP is FTP wrapped inside SSH and SCP is a secure
-                copy method based on SSH</p>
-            <ul>
-                <li>Data link layer - Ethernet II, which includes source and destination MAC addresses</li>
-                <li>Internet layer - Internet Protocol v4</li>
-                <li>Transport layer - Transmission Control Protocol (TCP)</li>
-                <li>Application layer - Secure Shell Protocol</li>
-            </ul>
-        </ol>
-    </div>
+        <li><strong>Use scp, sftp and scp protocols to upload your webpage to the server. Use Wireshark to find your
+                password and to list all protocols which are used during this communication. Assign abovementioned
+                protocols to ISO/OSI layers.</strong></li>
+        <p>Both SCP and SFTP protocols utilise SSH to encrypt the data that is exchanged between the client and the
+            server. As a result, we are unable to extract password from the communication. Interestingly, Wireshark
+            tries to interpret the communication and, e.g. while connecting to port 22, it interprets the communication
+            as SSH protocol.</p>
+        <p>SCP Protocol</p>
+        <ul>
+            <li>
+                <p>Port 22</p>
+                <img src="images/task_1/wireshark_scp_22.png" alt="SCP Port 22">
+            </li>
+            <li>
+                <p>Port 22222</p>
+                <img src="images/task_1/wireshark_scp_22222.png" alt="SCP Port 22222">
+            </li>
+        </ul>
+        <p>SFTP Protocol</p>
+        <ul>
+            <li>
+                <p>Port 22</p>
+                <img src="images/task_1/wireshark_sftp_22.png" alt="SFTP Port 22">
+            </li>
+            <li>
+                <p>Port 22222</p>
+                <img src="images/task_1/wireshark_sftp_22222.png" alt="SFTP Port 22222">
+            </li>
+        </ul>
+        <p>Both protocols make use of the same underlying layers. SFTP is FTP wrapped inside SSH and SCP is a secure
+            copy method based on SSH:</p>
+        <ul>
+            <li>Data link layer - Ethernet II, which includes source and destination MAC addresses</li>
+            <li>Internet layer - Internet Protocol v4</li>
+            <li>Transport layer - Transmission Control Protocol (TCP)</li>
+            <li>Application layer - Secure Shell Protocol</li>
+        </ul>
+    </ol>
 
 </body>
 

@@ -3,6 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <style>
+        img {
+            max-width: 800px;
+            border: 3px solid black;
+            display: block;
+            margin: 10px 0px;
+        }
+    </style>
     <link rel="stylesheet" href="style.css">
     <title>NT laboratories | Assignment 3</title>
 </head>
@@ -94,7 +102,81 @@
     </div>
     <div class="content">
         <h3>Practical Part</h3>
+        <ol>
+            <li><strong>Use ping, pathping, tracert to the following hosts:</strong></li>
+            <ul>
+                <li>Computer in a local network</li>
+                    <img src="images/task_3/local_ping.png" alt="ping localhost">
+                    <img src="images/task_3/local_pathping.png" alt="pathping localhost">
+                    <img src="images/task_3/local_tracert.png" alt="tracert localhost">
+                <li>www.onet.pl</li>
+                    <img src="images/task_3/onet_ping.png" alt="ping localhost">
+                    <img src="images/task_3/onet_pathping.png" alt="pathping localhost">
+                    <img src="images/task_3/onet_tracert.png" alt="tracert localhost">
+                <li>www.google.com</li>
+                    <img src="images/task_3/google_com_ping.png" alt="ping localhost">
+                    <img src="images/task_3/google_com_pathping.png" alt="pathping localhost">
+                    <img src="images/task_3/google_com_tracert.png" alt="tracert localhost">
+                <li>www.google.pl</li>
+                    <img src="images/task_3/google_pl_ping.png" alt="ping localhost">
+                    <img src="images/task_3/google_pl_pathping.png" alt="pathping localhost">
+                    <img src="images/task_3/google_pl_tracert.png" alt="tracert localhost">
+                <li>www.lodman.pl</li>
+                    <img src="images/task_3/lodman_ping.png" alt="ping localhost">
+                    <img src="images/task_3/lodman_pathping.png" alt="pathping localhost">
+                    <img src="images/task_3/lodman_tracert.png" alt="tracert localhost">
+            </ul>
+            
+            <li><strong>Identify physical location of abovementioned servers (search for tools in the Internet)</strong></li>
+            <p>We may use tools such as https://www.iplocation.net/ip-lookup to find the physical location of an IP.</p>
+            <p>192.168.56.1 is a private address, thus we are unable to find the physical location.</p>
+            <p>www.onet.pl</p>
+            <img src="images/task_3/onet_location.png" alt="onet.pl location">
+            <p>www.google.com</p>
+            <img src="images/task_3/google_com_location.png" alt="google.com location">
+            <p>www.google.pl</p>
+            <img src="images/task_3/google_pl_location.png" alt="google.pl location">
+            <p>www.lodman.pl</p>
+            <img src="images/task_3/lodman_location.png" alt="lodman.pl location">
+    
+            <li><strong>When using tracert assign consecutive hops to private/public network addresses.</strong></li>
+            <p>192.168.56.1 is a private address, thus we are unable to find the physical location.</p>
 
+            <p>www.onet.pl</p>
+            <p>Private hops are:</p>
+            <ul>
+                <li>10.112.0.1</li>
+                <li>10.100.90.1</li>
+            </ul>
+            <p>The rest of the hops are public IP addresses.</p>
+            <p>www.google.com</p>
+            <p>Private hops are:</p>
+            <ul>
+                <li>10.112.0.1</li>
+                <li>10.100.90.1</li>
+            </ul>
+            <p>The rest of the hops are public IP addresses.</p>
+            <p>www.google.pl</p>
+            <p>Private hops are:</p>
+            <ul>
+                <li>10.112.0.1</li>
+                <li>10.100.90.1</li>
+            </ul>
+            <p>The rest of the hops are public IP addresses.</p>
+            <p>www.lodman.pl</p>
+            <p>Private hops are:</p>
+            <ul>
+                <li>10.112.0.1</li>
+                <li>10.100.90.1</li>
+            </ul>
+            <p>The rest of the hops are public IP addresses.</p>
+            
+            <li><strong>Check ip address and physical address of your host using ipconfig</strong></li>
+            <img src="images/task_3/ipconfig.png" alt="Ipconfig output">
+            <p>We ran <i>ipconfig /all</i> command</p>
+            <p>Physical address is 00:1c:42:89:61:af</p>
+            <p>IP address is 10.211.55.4</p>
+        </ol>
     </div>
 </body>
 

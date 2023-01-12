@@ -107,10 +107,6 @@ a:visited {
     margin-right: auto;
 }
 
-dfn {
-    font-weight: 800;
-}
-
-li {
-    margin: 10px 0;
+dfn{
+font-weight:800;
 }
