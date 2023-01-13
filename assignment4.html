@@ -19,7 +19,7 @@
             <li><a href="assignment1.html">Assignment 1</a></li>
             <li><a href="assignment2.html">Assignment 2</a></li>
             <li> <a href="assignment3.html">Assignment 3 </a></li>
-            <li> <a href="assignment4.html">Assignment 4</a></li>
+            <li> <a href="https://wmichalowski.github.io/assignment4.html">Assignment 4</a></li>
             <li> <a href="assignment5.html">Assignment 5</a></li>
         </ul>
     </div>
@@ -60,7 +60,7 @@
             </li>
             <li> <dfn>three-way handshake</dfn> - A way to establish connection between two computers over TCP. It
                 starts with
-                the one wanting to establish the connection sending the packet with “SYN” (synchronize?) bit set to
+                the one wanting to establish the connection sending the packet with “SYN” (synchronize) bit set to
                 1. This informs the other computer about the intention of starting the transmission. In response, it
                 receives a packet with “ACK” (acknowledge) and “SYN” bits set to 1. Last step of the handshake is
                 for the first computer to reply back with an “ACK”. <img
@@ -91,7 +91,7 @@
                 <table>
                     <tr>
                         <th>Port Number</th>
-                        <th>Usage</th>
+                        <th>Common Usage</th>
                     </tr>
                     <tr>
                         <td>20</td>
@@ -189,7 +189,89 @@
     </div>
     <div class="content">
         <h3>Practical Part</h3>
-
+        <ol>
+            <li>
+                <strong>
+                    Enter www.google.com webpage using preferred browser. Use netstat and Wireshark to identify ports
+                    which are used for data transmission (local and remote port numbers). Finish the connection (close
+                    the browser) and check local port status.
+                </strong>
+                <img src="images/task_4/google_request.png" alt="Connection with browser opened">
+                <p>
+                    We may see the ephemeral port opened on the client side and the port 443 opened on the server side.
+                    The connection is established using TCP protocol and encrypted using TLS.
+                    It should be noted that depending on the browser version, HTTP/3 may be used with its' underlying
+                    QUIC protocol. In this case, the connection would be established using UDP protocol.
+                    Port used on the client side is 65429 and on the server side is 443.
+                </p>
+                <img src="images/task_4/google_closed.png" alt="Connection with browser closed">
+                <p>
+                    After closing the browser, the connection is closed and the ephemeral port is closed on the client
+                    side. We may see that the connection state is TIME_WAIT. This is a common behaviour for TCP
+                    connections. After a couple of minutes of lack of activity, the connection is closed and the port is
+                    released.
+                </p>
+            </li>
+            <li>
+                <strong>
+                    Copy the file from your local host to studife.it.p.lodz.pl server using ftp protocol. Use netstat
+                    and Wireshark to identify ports which are used for data transmission (local and remote port
+                    numbers). Finish the connection and check local port status.
+                </strong>
+                <img src="images/task_4/ftp_connect.png" alt="FTP connection">
+                <p>
+                    We may notice that we are using FTP in passive mode. This means that the server will open a port for
+                    us to connect to. This is why we see that another connection is being opened shortly after the first
+                    one.
+                    The command channel utilises port 65251 (it later changes for port 65255) on the client side and
+                    port 21 on the server side. The data channel utilises port 65254 on the client side and port 36635
+                    on the server side.
+                </p>
+                <img src="images/task_4/ftp_sending_files.png" alt="FTP sending files">
+                <p>
+                    File transfers are happening over the newly established connection to a random port opened by the
+                    server.
+                </p>
+                <img src="images/task_4/ftp_end_connection.png" alt="FTP connection closed">
+                <p>
+                    After ending the conection in the FTP client, the connection is closed gracefully. The ephemeral
+                    port is closed on the client side and the connection state is TIME_WAIT.
+                </p>
+                <img src="images/task_4/ftp_netstat.png" alt="netstat throughout FTP connection">
+            </li>
+            <li>
+                <strong>
+                    Copy the file from your local host to studife.it.p.lodz.pl server using scp or sftp protocol. Use
+                    netstat and Wireshark to identify ports which are used for data transmission (local and remote port
+                    numbers). Finish the connection and check local port status.
+                </strong>
+                <img src="images/task_4/sftp_connect.png" alt="SFTP connection">
+                <p>
+                    SFTP connection is established using SSH protocol. This means that we are using only a single TCP
+                    connection.
+                    The connection is established using port 65296 on the client side and port 22 on the server side.
+                </p>
+                <img src="images/task_4/sftp_port_change.png" alt="SFTP sudden change of ports">
+                <p>
+                    During the communication, a port change occured. That said, it is uncommon.
+                </p>
+                <img src="images/task_4/sftp_end_connection.png" alt="SFTP connection closed">
+                <p>
+                    We may notice that the connection was not ended gracefully. The host sent a RST/ACK packet.
+                </p>
+                <img src="images/task_4/sftp_netstat.png" alt="netstat throughout SFTP connection">
+            </li>
+            <li>
+                <strong>
+                    Use Wireshark to check which protocol and port is used in transport layer by DNS protocol.
+                </strong>
+                <img src="images/task_4/dns.png" alt="DNS connection">
+                <p>
+                    We may notice that DNS is using UDP protocol and port 53.
+                    The client chose a random port number 50193 to send the DNS request.
+                </p>
+            </li>
+        </ol>
     </div>
 </body>
 
