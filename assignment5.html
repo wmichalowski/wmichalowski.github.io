@@ -3,33 +3,468 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>NT laboratories | Assignment 5</title>
+    <link rel="stylesheet" href="style.css">
+    <title>NT laboratories | Assignment 4</title>
 </head>
 
 <body>
-    <a href="index.html">
-        <h1>Network Technologies Laboratory Reports</h1>
-    </a>
-    <h2>group 12: Wojciech Michałowski 242222, Piotr Wosiak 242232</h2>
-    <hr>
-    <ul>
-        <a href="assignment1.html">
-            <li>Assignment 1</li>
+    <div id="header">
+        <a href="index.html">
+            <h1>Network Technologies Laboratory Reports</h1>
         </a>
-        <a href="assignment2.html">
-            <li>Assignment 2</li>
-        </a>
-        <a href="assignment3.html">
-            <li>Assignment 3</li>
-        </a>
-        <a href="https://wmichalowski.github.io/assignment4.html">
-            <li>Assignment 4</li>
-        </a>
-        <a href="assignment5.html">
-            <li>Assignment 5</li>
-        </a>
-    </ul>
+        <h2>group 12: Wojciech Michałowski 242222, Piotr Wosiak 242232</h2>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="assignment1.html">Assignment 1</a></li>
+            <li><a href="assignment2.html">Assignment 2</a></li>
+            <li> <a href="assignment3.html">Assignment 3 </a></li>
+            <li> <a href="https://wmichalowski.github.io/">Assignment 4</a></li>
+            <li> <a href="assignment5.html">Assignment 5</a></li>
+        </ul>
+    </div>
     <h2>Assignment 5</h2>
+    <div class="content">
+        <h3>Theoretical Part</h3>
+
+        <p><strong> DNS system:</strong>
+        <ul>
+            <li><strong> List of Top Level Domains</strong>
+                TLDs are mainly classified into two categories: generic TLDs and country-specific TLDs.
+                A list of all valid top-level domains is maintained by the IANA and is updated from time to time:
+                <a
+                    href="https://data.iana.org/TLD/tlds-alpha-by-domain.txt">https://data.iana.org/TLD/tlds-alpha-by-domain.txt</a>
+            </li>
+            <li>
+                <dfn>Hierarchical structure of Domain Name System (DNS)</dfn> - DNS uses a hierarchy to manage its
+                distributed database system. The DNS hierarchy, also called the domain name space, is an inverted tree
+                structure.
+                The DNS tree has a single domain at the top of the structure called the root domain. A period or dot (.)
+                is the designation for the root domain. Below the root domain are the top-level domains that divide the
+                DNS hierarchy into segments.
+            </li>
+            <li>
+                <dfn>Top Level Domains</dfn> - Top-level domain (TLD) refers to the last segment of a domain name, or
+                the part that follows immediately after the "dot" symbol.
+                <img src="https://www.novell.com/documentation/dns_dhcp/dhcp_enu/graphics/dhc_002a.gif" alt="">
+            </li>
+            <li>
+                <dfn>DNS query</dfn> - is a demand for information sent from a user's computer (DNS
+                client) to a DNS server. In most cases a DNS request is sent, to ask for the IP address associated with
+                a domain name. An attempt to reach a domain, is actually a DNS client querying the DNS servers to get
+                the IP address, related to that domain. There are 3 types of DNS Query:
+                <ul>
+                    <li> <dfn> Recursive</dfn> - server is expected to hold and return the answer for the requested
+                        hostname. The DNS server will proceed to return the answers from its own local cache or
+                        database. If the DNS server is unable to find information about the requested hostname, it will
+                        respond with an empty response instead.</li>
+                    <li>
+                        <dfn>Non-recursive</dfn> - A recursive query tells the querying DNS server or resolve that it
+                        should provide an answer for the send questions. If the server itself serves as an authoritative
+                        server for this domain, it should respond with the normal response. If however, the server is
+                        not an authoritative server for this domain, it should start a recursive query process to
+                        resolve the domain name itself and then return the resulting records.
+                    </li>
+                    <li>
+                        <dfn>Iterative</dfn> - the DNS client asks the server to resolve the requested questions to the
+                        best of its abilities. If the DNS server is the authoritative server or contains the information
+                        about the request in its cache, it will provide the answer to the client. However, if the DNS
+                        server is unable to determine a response, it will send back a referral to other DNS servers
+                        which might be able to provide the answer.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <dfn>DNS delegation</dfn> - for a DNS server to answer queries about any name, it must have a direct
+                or indirect path to every zone in the namespace. These paths are created by means of delegation. A
+                delegation is a record in a parent zone that lists a name server that is authoritative for the zone in
+                the next level of the hierarchy. Delegations make it possible for servers in one zone to refer clients
+                to servers in other zones.
+            </li>
+            <li>
+                <dfn>DNS record</dfn> - in authoritative DNS servers that provide information about a domain including
+                what IP address is associated with that domain and how to handle requests for that domain. These records
+                consist of a series of text files written in what is known as DNS syntax. All DNS records also have a
+                ‘TTL’, which stands for time-to-live, and indicates how often a DNS server will refresh that record.
+                <table>
+                    <tr>
+                        <th colspan="2">Most common types of DNS record</th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>The record that holds the IP address of a domain. </td>
+                    </tr>
+                    <tr>
+                        <td>AAAA</td>
+                        <td>The record that contains the IPv6 address for a domain (as opposed to A records, which list
+                            the IPv4 address). </td>
+                    </tr>
+                    <tr>
+                        <td>CNAME</td>
+                        <td>Forwards one domain or subdomain to another domain, does NOT provide an IP address. </td>
+                    </tr>
+                    <tr>
+                        <td>MX</td>
+                        <td>Directs mail to an email server. </td>
+                    </tr>
+                    <tr>
+                        <td>TXT</td>
+                        <td>Lets an admin store text notes in the record. These records are often used for email
+                            security. </td>
+                    </tr>
+                    <tr>
+                        <td>NS</td>
+                        <td>Stores the name server for a DNS entry.</td>
+                    </tr>
+                    <tr>
+                        <td>SOA</td>
+                        <td>Stores admin information about a domain. </td>
+                    </tr>
+                    <tr>
+                        <td>SRV</td>
+                        <td>Specifies a port for specific services. </td>
+                    </tr>
+                    <tr>
+                        <td>PTR</td>
+                        <td>Provides a domain name in reverse-lookups. </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <dfn>Reverse DNS</dfn> - a DNS query for the domain name associated with a given
+                IP address. This accomplishes the opposite of the more commonly used forward DNS lookup, in which the
+                DNS system is queried to return an IP address.
+            </li>
+            <li>
+                <dfn>Authoritative answer non authoritative answer</dfn> - an authoritative answer comes from a
+                nameserver that is considered authoritative for the domain which it's returning a record for (one of the
+                nameservers in the list for the domain a lookup was done on), and a non-authoritative answer comes from
+                anywhere else (a nameserver not in the list for the domain a lookup was done on).
+            </li>
+            <li>
+                <dfn>DNS resolver</dfn> - a service that provides an IP address on request for a domain name.
+            </li>
+            <li>
+                <dfn>DNS cache</dfn> - refers to the temporary storage of information about previous DNS lookups on a
+                machine's OS or web browser. Keeping a local copy of a DNS lookup allows the OS or browser to quickly
+                retrieve it and thus a website's URL can be resolved to its corresponding IP much more efficiently.
+            </li>
+            <li>
+                <dfn>/etc/hosts</dfn> - file that contains the Internet Protocol (IP) host names and addresses for
+                the local host and other hosts in the Internet network. This file is used to resolve a name into an
+                address. When the system is using a name server, the file is accessed only if the name server cannot
+                resolve the host name.
+            </li>
+        </ul>
+        </p>
+        <p>
+            <strong>Mail system:</strong>
+        <ul>
+            <li>
+                <dfn>SMTP </dfn>- (Simple Mail Transfer Protocol) is a widely used TCP protocol for email sending. The
+                SMTP protocol is mainly used by the clients to send emails to the servers or for the email
+                communications between servers.
+            </li>
+            <li>
+                <dfn>IMAP</dfn> - The Internet Message Access Protocol is a protocol for receiving
+                emails from a server. Since IAMP allows access to emails from multiple locations simultaneously, it
+                keeps the email on the server after being delivered. Also, it doesn't download the entire email until
+                the recipient opens it.
+            </li>
+            <li>
+                <dfn>POP3</dfn> - Post Office Protocol is a method of accessing mailboxes. Version 3 is the most widely
+                used version of this standard, and it is popular among users due to its low reliance on Internet
+                connections. POP3 transfers emails from the server to the client, allowing you to read them even if you
+                are not connected to the internet.
+            </li>
+            <li>
+                <dfn>Client/Server communication</dfn> - involves two components, namely a client and a
+                server. They are usually multiple clients in communication with a single server. The clients send
+                requests to the server and the server responds to the client requests. Email is delivered using a
+                client/server architecture. An email message is created using a mail client program. This program then
+                sends the message to a server. The server then forwards the message to the recipient's email server,
+                where the message is then supplied to the recipient's email client.
+            </li>
+            <li>
+                Basic SMTP commands include: HELO, MAIL FROM, RCPT TO, DATA, RSET, VRFY, NOOP, QUIT
+            </li>
+            <li>
+                <dfn>NNTP protocol</dfn> - an application protocol used for transporting Usenet news articles (netnews)
+                between news servers, and for reading/posting articles by the end user client applications.
+            </li>
+            <li>
+                <dfn>e-mail mailbox</dfn> - storage location of electronic mail messages found on a remote server or
+                downloaded to the user's hard drive. Software e-mail programs commonly divide the mailbox into separate
+                folders, notably the inbox, outbox, sent items, and deleted items.
+            </li>
+            <li>
+                <dfn>mailbox parameters</dfn> - Incoming mail server, Outgoing mail server, port numbers for: SMTP,
+                SMTPS, IMAP, POP3; Login, Password
+            </li>
+            <li>
+                <dfn>alias</dfn> - a forwarding address, meaning that all emails addressed to the alias, are forwarded
+                to one or more specified accounts. The alias itself has no inbox, no login and cannot be used to send
+                emails.
+            </li>
+            <li>
+                <dfn>address</dfn> - an email address is a designation for an electronic mailbox that sends and receives
+                messages, known as email, on a computer network. Since the 1980s, all email addresses follow the same
+                format: janedoe@domainname.com
+            </li>
+            <li>
+                <dfn>e-mail header</dfn> - header lines identify particular routing information of the message,
+                including the sender, recipient, date and subject. Some headers are mandatory, such as the FROM, TO and
+                DATE headers. Others are optional, but very commonly used, such as SUBJECT and CC.
+            </li>
+            <li>
+                <dfn>separator</dfn> - in the recipients columns header lines email addresses are separated using
+                semicolon character.
+            </li>
+            <li>
+                <dfn>email atachments</dfn> - an email attachment is a computer file sent along with an email message.
+                One or more files can be attached to any email message, and be sent along with it to the recipient. This
+                is typically used as a simple method to share documents and images.
+            </li>
+            <li>
+                <dfn>e-mail coding</dfn> - HTML email is the use of a subset of HTML to provide formatting and semantic
+                markup capabilities in email that are not available with plain text: Text can be linked without
+                displaying a URL, or breaking long URLs into multiple pieces, it allows in-line inclusion of images,
+                tables.
+            </li>
+            <li>
+                <dfn>MIME</dfn> - an Internet standard that extends the format of email messages to support text in
+                character sets other than ASCII, as well as attachments of audio, video, images, and application
+                programs. Message bodies may consist of multiple parts, and header information may be specified in
+                non-ASCII character sets.
+            </li>
+            <li>
+                <dfn>mailing list</dfn> - a mailing list is a collection of names and addresses used by an individual or
+                an organization to send material to multiple recipients.
+            </li>
+            <li><dfn> e-mail gate </dfn>- an email gateway is a type of email server that protects an organizations or
+                users
+                internal email servers. This server acts as a gateway through which every incoming and outgoing email
+                passes
+                through. A Secure Email Gateway (SEG) is a device or software used for email monitoring that are being
+                sent
+                and received.</li>
+            <li>Email security is a set of actions taken in order to increase safety of communication done over email.
+                To ensure this, different protocols are used:
+                <ul>
+                    <li>
+                        <dfn>SSL</dfn> - a technology to secure the communication between a client and the server. An
+                        SSL for email ensures that the email is not intercepted during the transit and nobody except the
+                        intended recipient can access it.
+                    </li>
+                    <li>
+                        <dfn>TLS</dfn> - another security protocol that encrypts email for privacy. TLS prevents
+                        unauthorized access of email when it's in transit over internet connections.
+                    </li>
+                    <li>
+                        <dfn>PGP</dfn> - an encryption program that provides cryptographic privacy and authentication
+                        for data communication. PGP is used for signing, encrypting, and decrypting texts, e-mails,
+                        files, directories, and whole disk partitions and to increase the security of e-mail
+                        communications. It enables the option of digital signature. The message being sent can be
+                        digitally signed. Sender uses their private key to generate and attach a signature based on the
+                        content of the email message. The recipient can then use sender’s public key to verify that the
+                        signature was really made with their private key.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <dfn>Spam</dfn> - any unwanted mail that is sent to a mail address.
+            </li>
+            <li>
+                <dfn>Blacklist</dfn> is a record that contains IP addresses or domains flagged by spam filters. A mail
+                transfer agent (MTA) using <dfn>greylisting</dfn> will "temporarily reject" any email from a sender it
+                does not recognize. If the mail is legitimate, the originating server will try again after a delay, and
+                if sufficient time has elapsed, the email will be accepted.
+            </li>
+            <li>
+                <dfn>Email filtering </dfn>- processing of email to organize it according to specified criteria. The
+                term can apply to the intervention of human intelligence, but most often refers to the automatic
+                processing of messages at an SMTP server, possibly applying anti-spam techniques. Filtering can be
+                applied to incoming emails as well as to outgoing ones.
+            </li>
+        </ul>
+        </p>
+        <div class="subsection">
+            <p>Sources:</p>
+            <li><a
+                    href="https://www.techopedia.com/definition/1348/top-level-domain-tld">https://www.techopedia.com/definition/1348/top-level-domain-tld</a>
+            </li>
+            <li><a
+                    href="https://www.novell.com/documentation/dns_dhcp/?page=/documentation/dns_dhcp/dhcp_enu/data/behdbhhj.html">https://www.novell.com/documentation/dns_dhcp/?page=/documentation/dns_dhcp/dhcp_enu/data/behdbhhj.html</a>
+            </li>
+            <li><a
+                    href="https://bunny.net/academy/dns/what-is-a-dns-and-recursive-query/"></a>https://bunny.net/academy/dns/what-is-a-dns-and-recursive-query/
+            </li>
+            <li><a href="https://www.cloudns.net/wiki/article/254/">https://www.cloudns.net/wiki/article/254/</a></li>
+            <li><a
+                    href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/reviewing-dns-concepts">https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/reviewing-dns-concepts</a>
+            </li>
+            <li><a
+                    href="https://www.cloudflare.com/learning/dns/dns-records/">https://www.cloudflare.com/learning/dns/dns-records/</a>
+            </li>
+            <li><a
+                    href="https://www.cloudflare.com/learning/dns/glossary/reverse-dns/">https://www.cloudflare.com/learning/dns/glossary/reverse-dns/</a>
+            </li>
+            <li><a
+                    href="https://serverfault.com/questions/413124/dns-nslookup-what-is-the-meaning-of-the-non-authoritative-answer">https://serverfault.com/questions/413124/dns-nslookup-what-is-the-meaning-of-the-non-authoritative-answer</a>
+            </li>
+            <li><a
+                    href="https://www.ionos.com/digitalguide/server/know-how/dns-resolver/">https://www.ionos.com/digitalguide/server/know-how/dns-resolver/</a>
+            </li>
+            <li>
+                <a href="https://www.keycdn.com/support/dns-cache">https://www.keycdn.com/support/dns-cache </a>
+            </li>
+            <li><a
+                    href="https://www.ibm.com/docs/en/aix/7.1?topic=formats-hosts-file-format-tcpip">https://www.ibm.com/docs/en/aix/7.1?topic=formats-hosts-file-format-tcpip</a>
+            </li>
+            <li><a
+                    href="https://www.tutorialspoint.com/operating-systems-client-server-communication">https://www.tutorialspoint.com/operating-systems-client-server-communication</a>
+            </li>
+            <li><a
+                    href="https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/ch-email.html">https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/ch-email.html</a>
+            </li>
+            <li><a
+                    href="https://www.samlogic.net/articles/smtp-commands-reference.htm">https://www.samlogic.net/articles/smtp-commands-reference.htm</a>
+            </li>
+            <li>
+                <a
+                    href="https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol">https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol</a>
+            </li>
+            <li><a
+                    href="https://www.computerhope.com/jargon/m/mailbox.htm">https://www.computerhope.com/jargon/m/mailbox.htm</a>
+            </li>
+            <li><a
+                    href="https://help.one.com/hc/en-us/articles/115005586369-What-is-an-email-alias-">https://help.one.com/hc/en-us/articles/115005586369-What-is-an-email-alias-</a>
+            </li>
+            <li>
+                <a
+                    href="https://www.webopedia.com/definitions/email-address/">https://www.webopedia.com/definitions/email-address/</a>
+            </li>
+            <li><a href="https://whatismyipaddress.com/email-header">https://whatismyipaddress.com/email-header</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/HTML_email">https://en.wikipedia.org/wiki/HTML_email</a></li>
+            <li><a
+                    href="https://en.wikipedia.org/wiki/Email_attachment">https://en.wikipedia.org/wiki/Email_attachment</a>
+            </li>
+            <li><a href="https://en.wikipedia.org/wiki/MIME">https://en.wikipedia.org/wiki/MIME</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Mailing_list">https://en.wikipedia.org/wiki/Mailing_list</a></li>
+            <li><a
+                    href="https://www.proofpoint.com/us/threat-reference/email-gateway">https://www.proofpoint.com/us/threat-reference/email-gateway</a>
+            </li>
+            <li><a
+                    href="https://sectigostore.com/page/what-to-know-about-an-ssl-certificate-for-your-mail-server/">https://sectigostore.com/page/what-to-know-about-an-ssl-certificate-for-your-mail-server/</a>
+            </li>
+            <li><a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy	">https://en.wikipedia.org/wiki/Pretty_Good_Privacy
+                </a></li>
+            <li><a href="https://www.bjornjohansen.com/secure-email">https://www.bjornjohansen.com/secure-email</a></li>
+            <li><a
+                    href="https://en.wikipedia.org/wiki/Email_filtering">https://en.wikipedia.org/wiki/Email_filtering</a>
+            </li>
+            <li>Lecture materials</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <h3>Practical Part</h3>
+        <ol>
+            <li>
+                <strong>
+                    Display DNS settings on your computer using Control Panel and ipconfig. Find google DNS server and
+                    change DNS settings on your computer to use this server.
+                </strong>
+                <img src="images/task_5/1_control_panel_properties.png" alt="Control panel properties">
+                <img src="images/task_5/1_ipconfig_properties.png" alt="DNS settings in ipconfig">
+                <img src="images/task_5/2_changed_dns.png" alt="Changed DNS in control panel">
+                <img src="images/task_5/2_changed_dns_ipconfig.png" alt="Results in ipconfig">
+            </li>
+            <li>
+                <strong>
+                    <p>Using dig, host, nslookup find the following information:</p>
+                </strong>
+                <ul>
+                    <li>
+                        <p>Domain names and corresponding IP addresses of computers in lodz.pl domain</p>
+                        <img src="images/task_5/lodz.pl.png" alt="lodz.pl">
+                    </li>
+                    <li>
+                        <p>A computer somewhere in Europe, outside Lodz and find all the available information about DNS
+                            settings of this computer</p>
+                        <img src="images/task_5/brussels.be.png" alt="brussels.be">
+                    </li>
+                    <li>
+                        <p>A computer somewhere outside Europe (eg. Exotic country) and find all the available
+                            information about DNS settings of this computer</p>
+                        <img src="images/task_5/www.japan.go.jp.png" alt="www.japan.go.jp">
+                    </li>
+                    <li>
+                        <p>Verify DNS assignment for localhost</p>
+                        <img src="images/task_5/localhost.png" alt="localhost">
+                    </li>
+                    <li>
+                        <p>Flush dns memory on your computer using ipconfig</p>
+                        <img src="images/task_5/flushdns.png" alt="dns flush">
+                    </li>
+                    <li>
+                        <p>Change the file hosts in such a way that when you enter ifeXX.com the website msn.com will
+                            display (where XX is the number of your ife group).</p>
+                        <img src="images/task_5/ife12.com.png" alt="ife12.com">
+                        <p>We may notice that when we sent a request to ife12.com, we received response 400 - this is
+                            due to the fact that by default the HTTP Host header is set to the domain where request is
+                            sent to and the server only accepted the expected www.msn.com</p>
+                    </li>
+                </ul>
+
+            </li>
+            <li>
+                <strong>
+                    Configure Thunderbird to send and receive e-mails from studife.it.p.lodz.pl
+                </strong>
+
+            </li>
+            <li>
+                <strong>
+                    Send an e-mail to:
+                </strong>
+                <ul>
+                    <li>
+                        <p>non-existent mail server</p>
+                        <img src="images/task_5/domain_notexistend_mail.png" alt="Nonexistent domain">
+                    </li>
+                    <li>
+                        <p>non-existent user on an existent e-mail server</p>
+                        <img src="images/task_5/user_nonexistend_local.png" alt="Nonexistent user">
+                    </li>
+                    <li>
+                        <p>a server which is not an e-mail server</p>
+                        <img src="images/task_5/server_not_mail.png" alt="Server that's not a mail server">
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>
+                    Using Wireshark analyse the process of sending and receiving e-mails from Thunderbird.
+                </strong>
+                <p>IMAP communication:</p>
+                <img src="images/task_5/imap_wireshark.png" alt="IMAP">
+                <p>SMTP communication:</p>
+                <img src="images/task_5/smtp_wireshark.png" alt="SMTP">
+            </li>
+            <li>
+                <strong>
+                    Send and receive an e-mail connecting to a smtp and pop3 server using telnet.
+                </strong>
+                <img src="images/task_5/telnet_smtp.png" alt="telnet SMTP">
+                <p>Due to the fact that studife.it.p.lodz.pl does not support POP3 neither in encrypted form, nor in
+                    plaintext, we decided to use IMAP to receive the message. Moreover, since SMTP authentication was
+                    disabled in plaintext form, we used openssl tool to connect in a secure manner,</p>
+                <img src="images/task_5/telnet_imap_1.png" alt="telnet IMAP 1">
+                <img src="images/task_5/telnet_imap_2.png" alt="telnet IMAP 2">
+            </li>
+        </ol>
+    </div>
 </body>
 
 </html>
