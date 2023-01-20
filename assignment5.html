@@ -54,12 +54,12 @@
                 a domain name. An attempt to reach a domain, is actually a DNS client querying the DNS servers to get
                 the IP address, related to that domain. There are 3 types of DNS Query:
                 <ul>
-                    <li> <dfn> Recursive</dfn> - server is expected to hold and return the answer for the requested
+                    <li> <dfn>Non-recursive</dfn> - server is expected to hold and return the answer for the requested
                         hostname. The DNS server will proceed to return the answers from its own local cache or
                         database. If the DNS server is unable to find information about the requested hostname, it will
                         respond with an empty response instead.</li>
                     <li>
-                        <dfn>Non-recursive</dfn> - A recursive query tells the querying DNS server or resolve that it
+                        <dfn>Recursive</dfn> - A recursive query tells the querying DNS server or resolve that it
                         should provide an answer for the send questions. If the server itself serves as an authoritative
                         server for this domain, it should respond with the normal response. If however, the server is
                         not an authoritative server for this domain, it should start a recursive query process to
@@ -101,7 +101,7 @@
                     </tr>
                     <tr>
                         <td>CNAME</td>
-                        <td>Forwards one domain or subdomain to another domain, does NOT provide an IP address. </td>
+                        <td>Alias </td>
                     </tr>
                     <tr>
                         <td>MX</td>
@@ -297,7 +297,7 @@
                     href="https://www.novell.com/documentation/dns_dhcp/?page=/documentation/dns_dhcp/dhcp_enu/data/behdbhhj.html">https://www.novell.com/documentation/dns_dhcp/?page=/documentation/dns_dhcp/dhcp_enu/data/behdbhhj.html</a>
             </li>
             <li><a
-                    href="https://bunny.net/academy/dns/what-is-a-dns-and-recursive-query/"></a>https://bunny.net/academy/dns/what-is-a-dns-and-recursive-query/
+                    href="https://bunny.net/academy/dns/what-is-a-dns-and-recursive-query/">https://bunny.net/academy/dns/what-is-a-dns-and-recursive-query/</a>
             </li>
             <li><a href="https://www.cloudns.net/wiki/article/254/">https://www.cloudns.net/wiki/article/254/</a></li>
             <li><a
@@ -458,7 +458,7 @@
                 </strong>
                 <img src="images/task_5/telnet_smtp.png" alt="telnet SMTP">
                 <p>Due to the fact that studife.it.p.lodz.pl does not support POP3 neither in encrypted form, nor in
-                    plaintext, we decided to use IMAP to receive the message. Moreover, since SMTP authentication was
+                    plaintext, we decided to use IMAP to receive the message. Moreover, since IMAP authentication was
                     disabled in plaintext form, we used openssl tool to connect in a secure manner,</p>
                 <img src="images/task_5/telnet_imap_1.png" alt="telnet IMAP 1">
                 <img src="images/task_5/telnet_imap_2.png" alt="telnet IMAP 2">
